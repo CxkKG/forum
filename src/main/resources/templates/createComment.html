@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Create Comment</title>
+</head>
+<body>
+<h2>Create Comment</h2>
+<form action="/createComment" method="post">
+  <input type="hidden" name="post.id" th:value="${postId}" />
+  <label>Content: <textarea name="content" required></textarea></label><br />
+  <input type="submit" value="Create Comment" />
+</form>
+</body>
+</html>
