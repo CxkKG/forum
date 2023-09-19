@@ -1,5 +1,7 @@
-package com.example.forum;
+package com.example.forum.Mapper;
 
+import com.example.forum.Comment;
+import com.example.forum.Post;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -11,11 +13,14 @@ public interface PostMapper {
     void createPost(Post post);
 
     @Select("SELECT * FROM posts WHERE id = #{id}")
-    Post findById(Long id);
+    Post findById(int id);
 
     @Delete("DELETE FROM posts WHERE id = #{id}")
-    void deletePost(Long id);
+    void deletePost(int id);
 
     @Select("SELECT * FROM posts WHERE is_published = true")
     List<Post> getPublishedPosts();
+
+    @Select("SELECT * FROM comments WHERE post_id = #{postId}")
+    List<Comment> getCommentsByPostId(int postId);
 }

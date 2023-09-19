@@ -1,5 +1,8 @@
-package com.example.forum;
+package com.example.forum.Service;
 
+import com.example.forum.Comment;
+import com.example.forum.Post;
+import com.example.forum.Mapper.PostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,15 +17,20 @@ public class PostService {
         postMapper.createPost(post);
     }
 
-    public Post getPostById(Long id) {
+    public Post getPostById(int id) {
         return postMapper.findById(id);
     }
 
-    public void deletePost(Long id) {
+    public void deletePost(int id) {
         postMapper.deletePost(id);
     }
 
     public List<Post> getPublishedPosts() {
         return postMapper.getPublishedPosts();
     }
+
+    public List<Comment> getCommentsByPostId(int postId) {
+        return postMapper.getCommentsByPostId(postId);
+    }
+
 }

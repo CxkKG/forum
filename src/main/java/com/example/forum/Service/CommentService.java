@@ -1,5 +1,7 @@
-package com.example.forum;
+package com.example.forum.Service;
 
+import com.example.forum.Comment;
+import com.example.forum.Mapper.CommentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

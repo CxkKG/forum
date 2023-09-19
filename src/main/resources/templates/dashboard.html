@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dashboard</title>
 </head>
 <body>
-<h2>Welcome to Your Dashboard</h2>
+<h2 align="center">Welcome to Your Dashboard</h2>
 <a href="/createPost">Create Post</a><br />
 
-<h3>Your Published Posts:</h3>
+<h3>刷新已发布的帖子</h3>
+<a href="/dashboard">刷新</a>
+
+<h4>Your Published Posts:</h4>
 <ul>
   <li th:each="post : ${publishedPosts}">
     <a th:href="@{/post/{id}(id=${post.id})}" th:text="${post.title}"></a>
   </li>
 </ul>
+
 </body>
 </html>
 

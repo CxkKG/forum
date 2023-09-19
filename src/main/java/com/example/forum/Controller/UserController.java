@@ -1,5 +1,7 @@
-package com.example.forum;
+package com.example.forum.Controller;
 
+import com.example.forum.User;
+import com.example.forum.Service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

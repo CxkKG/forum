@@ -1,5 +1,6 @@
-package com.example.forum;
+package com.example.forum.Mapper;
 
+import com.example.forum.Comment;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
