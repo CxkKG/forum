@@ -15,10 +15,20 @@
 
 <h3>Create Comment</h3>
 <form action="/addComment" method="post">
-  <input type="hidden" name="post.id" th:value="${postId}" />
+  <input type="hidden" name="post.id" th:value="${post.getId()}" />
   <label>Content: <textarea name="content" required></textarea></label><br />
   <input type="submit" value="Create Comment" />
 </form>
+
+<h4>Comments</h4>
+<div id="comments">
+  <ul>
+    <li th:each="comment : ${comments}">
+      <span th:text="${comment.content}"></span>
+    </li>
+  </ul>
+</div>
+
 
 </body>
 </html>

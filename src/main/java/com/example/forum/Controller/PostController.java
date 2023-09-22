@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class PostController {
     @Autowired
@@ -44,13 +46,14 @@ public class PostController {
     public String viewPost(@PathVariable int id, Model model) {
         Post post = postService.getPostById(id);
         model.addAttribute("post", post);
+        List<Comment> comments = commentService.getCommentsByPostId(id);
+        model.addAttribute("comments",comments);
         return "postDetails";
     }
 
     @GetMapping("/addComment")
-    public String createCommentPage(@ModelAttribute Comment comment) {
-        commentService.createComment(comment);
-        return "redirect:/post/" + comment.getPost().getId();
+    public String addCommentPage() {
+        return "postDetails";
     }
 
     @PostMapping("/addComment")
@@ -62,5 +65,6 @@ public class PostController {
         commentService.createComment(comment);
         return "redirect:/post/" + comment.getPost().getId();
     }
+
 }
 

@@ -1,6 +1,5 @@
 package com.example.forum.Mapper;
 
-import com.example.forum.Comment;
 import com.example.forum.Post;
 import org.apache.ibatis.annotations.*;
 
@@ -21,6 +20,4 @@ public interface PostMapper {
     @Select("SELECT * FROM posts WHERE is_published = true")
     List<Post> getPublishedPosts();
 
-    @Select("SELECT * FROM comments WHERE post_id = #{postId}")
-    List<Comment> getCommentsByPostId(int postId);
 }

@@ -1,6 +1,5 @@
 package com.example.forum.Service;
 
-import com.example.forum.Comment;
 import com.example.forum.Post;
 import com.example.forum.Mapper.PostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +26,6 @@ public class PostService {
 
     public List<Post> getPublishedPosts() {
         return postMapper.getPublishedPosts();
-    }
-
-    public List<Comment> getCommentsByPostId(int postId) {
-        return postMapper.getCommentsByPostId(postId);
     }
 
 }
